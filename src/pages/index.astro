@@ -1,11 +1,20 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Greeting from "../components/Greeting";
+import Demo from "../components/Demo.astro";
+import Benefits from "../components/Benefits.astro";
+import Diferencial from "../components/Diferencial.astro";
+import Projetos from "../components/Projetos.astro";
+import FAQ from "../components/FAQ.astro";
+import Contact from "../components/Contact.astro";
 const pageTitle = "Home Page";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <h2>My awesome blog subtitle</h2>
-
-  <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
+  <Demo />
+  <Benefits />
+  <Diferencial />
+  <Projetos />
+  <FAQ />
+  <Contact />
 </BaseLayout>
