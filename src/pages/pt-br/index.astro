@@ -1,0 +1,108 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+---
+
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1>Oi, eu sou o Rodrigo 👋</h1>
+      <p>
+        Este é meu espaço pessoal na web — onde compartilho um pouco do que
+        faço, estudo e crio.
+      </p>
+
+      <h2>Quem sou eu</h2>
+      <p>
+        Sou engenheiro mecânico, e engenheiro de obras HVAC em São Paulo,
+        Brasil. Além da engenharia, atuo também como desenvolvedor freelancer —
+        apaixonado por criar apps com <strong>Next.js</strong>, <strong
+          >Convex</strong
+        >, <strong>React</strong> e <strong>TypeScript</strong>.
+      </p>
+      <p>
+        Programo desde criança (lá da época do <em>Flash / ActionScript 3.0</em>
+        🎮), e hoje busco sempre soluções simples e bem feitas, que um desenvolvedor
+        solo possa manter. Sou muito fã de apps enxutos, <em>anti-ERP</em>, com
+        foco real no usuário e sem "feature creep".
+      </p>
+
+      <h2>O que ando criando</h2>
+      <ul>
+        <li>
+          📦 <strong>Warehouse Watcher</strong> — sistema de controle de estoque
+          para pequenos negócios, anti-ERP e simples de usar.
+        </li>
+        <li>
+          📝 Plataforma de simulados com banco de questões e filtros
+          inteligentes.
+        </li>
+        <li>🎮 Jogo Educativo com quizzes e mapa animado.</li>
+        <li>
+          🏗️ ERP modular para minha empresa de HVAC, com fluxo de propostas,
+          contratos, estoque e financeiro.
+        </li>
+        <li>
+          🌐 Landing pages de alta performance (Next.js + Astro) para clientes e
+          projetos próprios.
+        </li>
+      </ul>
+
+      <h2>Outras coisas que curto</h2>
+      <ul>
+        <li>🎹 Piano clássico — estudo e pratico com frequência.</li>
+        <li>
+          🎾 Tênis — hobby que me ajuda a manter o equilíbrio entre trabalho e
+          vida pessoal.
+        </li>
+        <li>
+          🌍 Viajar — já morei nos EUA e no Brasil, e conheci vários países.
+        </li>
+        <li>
+          📚 Estudo de física, matemática aplicada (curiosidade pessoal e para
+          refrescar conhecimentos de engenharia).
+        </li>
+        <li>
+          🛠️ Brincar com automação, IoT, servidores caseiros e otimização de
+          infraestrutura.
+        </li>
+        <li>🎥 Pensando em criar um canal de YouTube para devs solo.</li>
+      </ul>
+
+      <h2>Curiosidades</h2>
+      <p>
+        Já publiquei um artigo científico em um journal — <a
+          href="https://www.sciencedirect.com/science/article/abs/pii/B9780444642417503220"
+          target="_blank"
+          rel="noopener noreferrer">veja aqui</a
+        >.
+      </p>
+      <p>
+        Também sou bem autodidata: estudo linguagens como Elixir e Rust por
+        curiosidade, já mexi com Unity, Three.js, mapas interativos, e exploro
+        novos stacks como TigerBeetle.
+      </p>
+      <p>
+        Sempre estou em busca de maneiras de melhorar a arquitetura dos meus
+        apps, e recentemente tenho trabalhado bastante com <strong
+          >ConvexDB</strong
+        > para simplificar backends em tempo real.
+      </p>
+
+      <h2>Por que este site?</h2>
+      <p>
+        É meu espaço para documentar ideias, compartilhar projetos e talvez
+        inspirar outras pessoas. Se você curte esses assuntos também, me chama!
+        🚀
+      </p>
+    </main>
+    <Footer />
+  </body>
+</html>
