@@ -8,7 +8,10 @@ export default defineConfig({
   site: "https://rodrigoluiz.xyz",
   integrations: [mdx(), sitemap()],
   i18n: {
-    locales: ["pt-br", "en-us"],
+    locales: ["pt-br", "en"],
     defaultLocale: "pt-br",
+    routing: {
+      prefixDefaultLocale: false,
+    },
   },
 });
