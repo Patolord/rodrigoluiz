@@ -27,11 +27,17 @@ if (!currentPath) {
 
 <header>
   <nav>
-    <h2><a href="/">{SITE_TITLE}</a></h2>
+    <h2><a href={getRelativeLocaleUrl(currentLocale, "")}>{SITE_TITLE}</a></h2>
     <div class="internal-links">
-      <HeaderLink href="/">Home</HeaderLink>
-      <HeaderLink href="/blog">Blog</HeaderLink>
-      <HeaderLink href="/about">About</HeaderLink>
+      <HeaderLink href={getRelativeLocaleUrl(currentLocale, "")}
+        >Home</HeaderLink
+      >
+      <HeaderLink href={getRelativeLocaleUrl(currentLocale, "blog")}
+        >Blog</HeaderLink
+      >
+      <HeaderLink href={getRelativeLocaleUrl(currentLocale, "about")}
+        >About</HeaderLink
+      >
     </div>
     <div class="locale-switcher">
       {
@@ -41,7 +47,12 @@ if (!currentPath) {
             class={`locale-link ${currentLocale === locale ? "active" : ""}`}
             title={locale === "pt-br" ? "Português (Brasil)" : "English"}
           >
-            {locale === "pt-br" ? "PT" : "EN"}
+            <img
+              src={locale === "pt-br" ? "/br.svg" : "/us.svg"}
+              alt={locale === "pt-br" ? "Português (Brasil)" : "English"}
+              width="32"
+              height="32"
+            />
           </a>
         ))
       }
@@ -94,32 +105,33 @@ if (!currentPath) {
     display: flex;
     gap: 0.5em;
     align-items: center;
+    justify-content: center;
   }
 
   .locale-link {
-    padding: 0.5em 0.75em !important;
+    padding: 0.5em 0.5em !important;
     font-size: 0.9em;
     font-weight: 600;
     border-radius: 4px;
     background: transparent;
-    border: 2px solid transparent;
+
     transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .locale-link:hover {
-    background: rgba(var(--accent-light), 0.1);
-    border-color: rgba(var(--accent), 0.3);
+  .locale-link {
+    border-bottom: none !important;
   }
 
-  .locale-link.active {
-    background: var(--accent);
-    color: white;
-    border-color: var(--accent);
+  .locale-link img {
+    filter: grayscale(100%);
+    transition: filter 0.2s ease;
   }
 
-  .locale-link.active:hover {
-    background: var(--accent);
-    border-color: var(--accent);
+  .locale-link.active img {
+    filter: grayscale(0%);
   }
 
   .social-links,
