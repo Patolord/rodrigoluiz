@@ -1,0 +1,52 @@
+---
+title: "Usando MDX"
+description: "Lorem ipsum dolor sit amet em português"
+pubDate: "Jul 02 2022"
+heroImage: "../../../assets/blog-placeholder-5.jpg"
+locale: "pt-br"
+---
+
+Este post foi escrito em MDX.
+
+## O que é MDX?
+
+MDX é uma extensão de sintaxe para Markdown que permite você escrever JSX diretamente em seus arquivos Markdown. É uma ferramenta poderosa que combina a simplicidade do Markdown com a flexibilidade do React.
+
+## Características do MDX
+
+Com MDX você pode:
+
+- Usar componentes React dentro do Markdown
+- Importar e usar componentes personalizados
+- Adicionar interatividade aos seus posts
+- Manter a sintaxe simples do Markdown
+
+## Exemplo de Componente
+
+Aqui está um exemplo simples de como você pode usar um componente em MDX:
+
+export const Destaque = ({children, cor}) => (
+  <span
+    style={{
+      backgroundColor: cor,
+      borderRadius: '3px',
+      color: '#fff',
+      padding: '0.1rem 0.25rem',
+    }}>
+    {children}
+  </span>
+);
+
+Este texto tem <Destaque cor="#25c2a0">texto destacado em verde</Destaque> e também
+<Destaque cor="#1877F2">texto destacado em azul</Destaque>.
+
+## Por que usar MDX?
+
+MDX é perfeito quando você quer a simplicidade do Markdown mas precisa de mais poder e flexibilidade. É especialmente útil para:
+
+- Blogs técnicos
+- Documentação interativa
+- Landing pages
+- Qualquer conteúdo que se beneficie de componentes reutilizáveis
+
+Este é apenas um exemplo básico do que é possível com MDX! 
