@@ -1,0 +1,84 @@
+---
+import { getCollection } from "astro:content";
+import FormattedDate from "./FormattedDate.astro";
+import { Image } from "astro:assets";
+import { getRelativeLocaleUrl } from "astro:i18n";
+
+interface Props {
+  locale: string;
+  title: string;
+  description: string;
+  readMoreText: string;
+}
+
+const { locale, title, description, readMoreText } = Astro.props;
+
+// Filter posts by current locale
+const allPosts = await getCollection("blog");
+const posts = allPosts
+  .filter((post) => {
+    // Check if post has locale in frontmatter, or infer from folder structure
+    const postLocale = post.data.locale || post.id.split("/")[0];
+    return postLocale === locale;
+  })
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<div class="space-y-8">
+  <div class="hero bg-base-200 rounded-2xl">
+    <div class="hero-content text-center">
+      <div class="max-w-md">
+        <h1 class="text-5xl font-bold">{title}</h1>
+        <p class="py-6">
+          {description}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {
+        posts.map((post) => (
+          <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow">
+            <figure class="px-0">
+              {post.data.heroImage && (
+                <Image
+                  width={720}
+                  height={360}
+                  src={post.data.heroImage}
+                  alt=""
+                  class="w-full h-48 object-cover rounded-t-2xl"
+                />
+              )}
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title text-lg font-bold line-clamp-2">
+                {post.data.title}
+              </h2>
+              <p class="text-base-content/70 text-sm">
+                <FormattedDate date={post.data.pubDate} />
+              </p>
+              {post.data.description && (
+                <p class="text-base-content/80 line-clamp-3">
+                  {post.data.description}
+                </p>
+              )}
+              <div class="card-actions justify-end">
+                <a
+                  href={getRelativeLocaleUrl(
+                    locale,
+                    `blog/${post.id.split("/")[1]}`
+                  )}
+                  class="btn btn-primary"
+                >
+                  {readMoreText}
+                </a>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</div>

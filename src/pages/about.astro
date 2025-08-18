@@ -1,63 +1,142 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
-import AboutHeroImage from '../assets/blog-placeholder-about.jpg';
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage={AboutHeroImage}
->
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo
-		viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam
-		adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus
-		et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus
-		vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque
-		sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
-	</p>
+<BaseLayout title="Sobre Mim">
+  <!-- Simple Header -->
+  <header class="text-center mb-16">
+    <h1 class="text-4xl font-bold mb-4">Sobre Mim</h1>
+    <p class="text-lg text-base-content/70">Mais do que código e engenharia</p>
+  </header>
 
-	<p>
-		Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non
-		tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non
-		blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna
-		porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis
-		massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc.
-		Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis
-		bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra
-		massa massa ultricies mi.
-	</p>
+  <!-- Main Content -->
+  <div class="prose prose-lg max-w-none space-y-12">
+    <!-- Background -->
+    <section>
+      <h2 class="text-3xl font-bold mb-6">Formação e trajetória</h2>
+      <p class="text-lg leading-relaxed mb-4">
+        Formado em Engenharia Mecânica, trabalho como consultor especializado em
+        HVAC (aquecimento, ventilação e ar condicionado) em São Paulo. É um
+        campo que exige precisão técnica e compreensão de sistemas complexos -
+        habilidades que aplico diretamente no desenvolvimento de software.
+      </p>
+      <p class="text-lg leading-relaxed mb-4">
+        Programo desde os 12 anos, começando com Flash e ActionScript 3.0.
+        Passei por Visual Basic, C++, Java, até chegar no ecossistema JavaScript
+        moderno. Cada linguagem ensinou algo diferente sobre resolver problemas.
+      </p>
+      <p class="text-lg leading-relaxed">
+        A combinação engenharia + programação me dá perspectiva única: entendo
+        tanto limitações técnicas quanto necessidades reais dos usuários. Isso
+        me ajuda a criar soluções que funcionam no mundo real, não só no papel.
+      </p>
+    </section>
 
-	<p>
-		Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl
-		suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet
-		nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae
-		turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem
-		dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat
-		semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus
-		vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum
-		facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam
-		vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla
-		urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
-	</p>
+    <!-- Approach -->
+    <section>
+      <h2 class="text-3xl font-bold mb-6">Como trabalho</h2>
+      <p class="text-lg leading-relaxed mb-4">
+        Sou desenvolvedor solo por escolha. Gosto de controlar todo o processo:
+        desde entender o problema até entregar a solução. Isso me permite manter
+        consistência e qualidade em cada detalhe.
+      </p>
+      <p class="text-lg leading-relaxed mb-4">
+        Minha abordagem é anti-ERP: prefiro software focado que resolve um
+        problema específico muito bem, ao invés de tentar resolver tudo
+        mediocremente. Feature creep é o inimigo da usabilidade.
+      </p>
+      <p class="text-lg leading-relaxed">
+        Priorizo tecnologias estáveis e bem documentadas. Não sigo hypes,
+        escolho ferramentas que vão me permitir manter o código funcionando por
+        anos sem dor de cabeça.
+      </p>
+    </section>
 
-	<p>
-		Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper
-		viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc
-		scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur
-		gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus
-		pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim
-		blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id
-		cursus metus aliquam eleifend mi.
-	</p>
+    <!-- Personal -->
+    <section>
+      <h2 class="text-3xl font-bold mb-6">Lado pessoal</h2>
+      <p class="text-lg leading-relaxed mb-4">
+        <strong>Piano clássico:</strong> Estudo há anos, principalmente Bach e Chopin.
+        A disciplina da música ajuda com a disciplina do código. Ambos exigem precisão
+        e paciência para dominar.
+      </p>
+      <p class="text-lg leading-relaxed mb-4">
+        <strong>Tênis:</strong> Jogo regularmente para equilibrar as horas na frente
+        do computador. Esporte individual, como programação - sucesso depende da
+        sua dedicação e técnica.
+      </p>
+      <p class="text-lg leading-relaxed mb-4">
+        <strong>Viagens:</strong> Já morei nos EUA e obviamente no Brasil. Conheci
+        vários países, cada um ensina algo sobre como pessoas diferentes resolvem
+        os mesmos problemas básicos.
+      </p>
+      <p class="text-lg leading-relaxed mb-4">
+        <strong>Estudos paralelos:</strong> Física e matemática por curiosidade pessoal.
+        Gosto de entender como as coisas funcionam fundamentalmente. Também exploro
+        linguagens como Rust e Elixir - não por necessidade imediata, mas para expandir
+        formas de pensar sobre problemas.
+      </p>
+      <p class="text-lg leading-relaxed">
+        <strong>Projetos caseiros:</strong> Automação, IoT, servidores. Gosto de
+        aplicar tecnologia para resolver pequenos problemas do dia a dia. É onde
+        testo ideias antes de usar em projetos profissionais.
+      </p>
+    </section>
 
-	<p>
-		Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta
-		nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam
-		tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci
-		ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar
-		proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
-	</p>
-</Layout>
+    <!-- Research -->
+    <section>
+      <h2 class="text-3xl font-bold mb-6">Trabalho acadêmico</h2>
+      <p class="text-lg leading-relaxed mb-4">
+        Publiquei pesquisa científica durante a graduação sobre eficiência
+        energética em sistemas HVAC. O artigo está disponível na
+        <a
+          href="https://www.sciencedirect.com/science/article/abs/pii/B9780444642417503220"
+          target="_blank"
+          class="link link-primary">ScienceDirect</a
+        >.
+      </p>
+      <p class="text-lg leading-relaxed">
+        A experiência de pesquisa me ensinou a importância de metodologia
+        rigorosa e documentação detalhada - coisas que aplico tanto em
+        engenharia quanto em desenvolvimento.
+      </p>
+    </section>
+
+    <!-- Future -->
+    <section>
+      <h2 class="text-3xl font-bold mb-6">Próximos passos</h2>
+      <p class="text-lg leading-relaxed mb-4">
+        Tenho interesse em criar conteúdo sobre desenvolvimento solo - as
+        decisões, trade-offs e lições aprendidas. Talvez um canal no YouTube
+        focado em desenvolvedores que trabalham sozinhos e precisam de
+        estratégias diferentes de times grandes.
+      </p>
+      <p class="text-lg leading-relaxed mb-4">
+        Também quero explorar mais ConvexDB para aplicações tempo real. É uma
+        tecnologia que realmente simplifica backend complexo - exatamente o tipo
+        de ferramenta que permite desenvolvedores solo criarem produtos
+        robustos.
+      </p>
+      <p class="text-lg leading-relaxed">
+        Se você chegou até aqui e se identifica com essa abordagem, adoraria
+        conversar. Sempre aberto a trocar experiências e colaborar em projetos
+        que fazem sentido.
+      </p>
+    </section>
+
+    <!-- Contact -->
+    <section>
+      <h2 class="text-3xl font-bold mb-6">Contato</h2>
+      <p class="text-lg leading-relaxed">
+        <strong>GitHub:</strong>
+        <a
+          href="https://github.com/patolord"
+          target="_blank"
+          class="link link-primary">github.com/patolord</a
+        ><br />
+        <strong>Email:</strong> Via GitHub ou LinkedIn<br />
+        <strong>Localização:</strong> São Paulo, Brasil
+      </p>
+    </section>
+  </div>
+</BaseLayout>

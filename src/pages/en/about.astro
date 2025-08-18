@@ -1,51 +1,142 @@
 ---
-import Layout from "../../layouts/BlogPost.astro";
-import AboutHeroImage from "../../assets/blog-placeholder-about.jpg";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
-<Layout
-  title="About Me"
-  description="Learn more about Rodrigo"
-  pubDate={new Date("August 08 2021")}
-  heroImage={AboutHeroImage}
->
-  <p>
-    I'm a mechanical engineer and HVAC engineering consultant based in São
-    Paulo, Brazil, with a passion for building efficient, user-focused
-    applications. My journey in programming started in childhood with Flash and
-    ActionScript 3.0, and has evolved into a career combining engineering
-    expertise with modern web development.
-  </p>
+<BaseLayout title="About Me">
+  <!-- Simple Header -->
+  <header class="text-center mb-16">
+    <h1 class="text-4xl font-bold mb-4">About Me</h1>
+    <p class="text-lg text-base-content/70">More than code and engineering</p>
+  </header>
 
-  <p>
-    As a freelance developer, I specialize in creating applications using
-    Next.js, ConvexDB, React, and TypeScript. I'm particularly drawn to building
-    lean, anti-ERP solutions that solve real problems without unnecessary
-    complexity. My engineering background gives me a unique perspective on
-    system design and problem-solving.
-  </p>
+  <!-- Main Content -->
+  <div class="prose prose-lg max-w-none space-y-12">
+    <!-- Background -->
+    <section>
+      <h2 class="text-3xl font-bold mb-6">Background and path</h2>
+      <p class="text-lg leading-relaxed mb-4">
+        Graduated in Mechanical Engineering, I work as a consultant specializing
+        in HVAC (heating, ventilation and air conditioning) in São Paulo. It's a
+        field that requires technical precision and understanding of complex
+        systems - skills I apply directly to software development.
+      </p>
+      <p class="text-lg leading-relaxed mb-4">
+        I've been programming since age 12, starting with Flash and ActionScript
+        3.0. I went through Visual Basic, C++, Java, until reaching the modern
+        JavaScript ecosystem. Each language taught something different about
+        solving problems.
+      </p>
+      <p class="text-lg leading-relaxed">
+        The engineering + programming combination gives me a unique perspective:
+        I understand both technical limitations and real user needs. This helps
+        me create solutions that work in the real world, not just on paper.
+      </p>
+    </section>
 
-  <p>
-    Currently, I'm working on several projects including Warehouse Watcher (an
-    inventory control system for small businesses), educational platforms with
-    interactive quizzes, and a modular ERP system for my HVAC company. I believe
-    in creating solutions that a solo developer can maintain and scale
-    effectively.
-  </p>
+    <!-- Approach -->
+    <section>
+      <h2 class="text-3xl font-bold mb-6">How I work</h2>
+      <p class="text-lg leading-relaxed mb-4">
+        I'm a solo developer by choice. I like to control the entire process:
+        from understanding the problem to delivering the solution. This allows
+        me to maintain consistency and quality in every detail.
+      </p>
+      <p class="text-lg leading-relaxed mb-4">
+        My approach is anti-ERP: I prefer focused software that solves a
+        specific problem very well, instead of trying to solve everything
+        mediocrely. Feature creep is the enemy of usability.
+      </p>
+      <p class="text-lg leading-relaxed">
+        I prioritize stable and well-documented technologies. I don't follow
+        hypes, I choose tools that will allow me to keep code running for years
+        without headaches.
+      </p>
+    </section>
 
-  <p>
-    Beyond work, I'm passionate about classical piano, tennis, and travel. I've
-    lived in both the US and Brazil, which has given me a global perspective on
-    technology and business. I also enjoy studying physics and mathematics,
-    tinkering with IoT projects, and exploring new programming languages like
-    Elixir and Rust.
-  </p>
+    <!-- Personal -->
+    <section>
+      <h2 class="text-3xl font-bold mb-6">Personal side</h2>
+      <p class="text-lg leading-relaxed mb-4">
+        <strong>Classical piano:</strong> I've been studying for years, mainly Bach
+        and Chopin. Musical discipline helps with coding discipline. Both require
+        precision and patience to master.
+      </p>
+      <p class="text-lg leading-relaxed mb-4">
+        <strong>Tennis:</strong> I play regularly to balance hours in front of the
+        computer. Individual sport, like programming - success depends on your dedication
+        and technique.
+      </p>
+      <p class="text-lg leading-relaxed mb-4">
+        <strong>Travel:</strong> I've lived in the US and obviously Brazil. Visited
+        several countries, each teaches something about how different people solve
+        the same basic problems.
+      </p>
+      <p class="text-lg leading-relaxed mb-4">
+        <strong>Side studies:</strong> Physics and mathematics out of personal curiosity.
+        I like to understand how things work fundamentally. I also explore languages
+        like Rust and Elixir - not out of immediate necessity, but to expand ways
+        of thinking about problems.
+      </p>
+      <p class="text-lg leading-relaxed">
+        <strong>Home projects:</strong> Automation, IoT, servers. I like applying
+        technology to solve small daily problems. It's where I test ideas before
+        using them in professional projects.
+      </p>
+    </section>
 
-  <p>
-    I've published scientific research and am always learning new technologies.
-    Recently, I've been fascinated by ConvexDB for building real-time
-    applications and am considering starting a YouTube channel focused on solo
-    development. If you share similar interests or want to collaborate, feel
-    free to reach out!
-  </p>
-</Layout>
+    <!-- Research -->
+    <section>
+      <h2 class="text-3xl font-bold mb-6">Academic work</h2>
+      <p class="text-lg leading-relaxed mb-4">
+        I published scientific research during undergrad about energy efficiency
+        in HVAC systems. The article is available on
+        <a
+          href="https://www.sciencedirect.com/science/article/abs/pii/B9780444642417503220"
+          target="_blank"
+          class="link link-primary">ScienceDirect</a
+        >.
+      </p>
+      <p class="text-lg leading-relaxed">
+        The research experience taught me the importance of rigorous methodology
+        and detailed documentation - things I apply to both engineering and
+        development.
+      </p>
+    </section>
+
+    <!-- Future -->
+    <section>
+      <h2 class="text-3xl font-bold mb-6">Next steps</h2>
+      <p class="text-lg leading-relaxed mb-4">
+        I'm interested in creating content about solo development - the
+        decisions, trade-offs and lessons learned. Maybe a YouTube channel
+        focused on developers who work alone and need different strategies from
+        large teams.
+      </p>
+      <p class="text-lg leading-relaxed mb-4">
+        I also want to explore more ConvexDB for real-time applications. It's a
+        technology that truly simplifies complex backends - exactly the type of
+        tool that allows solo developers to create robust products.
+      </p>
+      <p class="text-lg leading-relaxed">
+        If you made it this far and identify with this approach, I'd love to
+        talk. Always open to exchanging experiences and collaborating on
+        projects that make sense.
+      </p>
+    </section>
+
+    <!-- Contact -->
+    <section>
+      <h2 class="text-3xl font-bold mb-6">Contact</h2>
+      <p class="text-lg leading-relaxed">
+        <strong>GitHub:</strong>
+        <a
+          href="https://github.com/patolord"
+          target="_blank"
+          class="link link-primary">github.com/patolord</a
+        ><br />
+        <strong>Email:</strong> Via GitHub or LinkedIn<br />
+        <strong>Location:</strong> São Paulo, Brazil
+      </p>
+    </section>
+  </div>
+</BaseLayout>

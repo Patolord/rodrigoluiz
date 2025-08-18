@@ -1,86 +1,70 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import FormattedDate from '../components/FormattedDate.astro';
-import { Image } from 'astro:assets';
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+import { Image } from "astro:assets";
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
-<html lang="en">
-	<head>
-		<BaseHead title={title} description={description} />
-		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
-			}
-			.hero-image {
-				width: 100%;
-			}
-			.hero-image img {
-				display: block;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
-			}
-			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
-			}
-			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-			}
-			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
-		</style>
-	</head>
+<html lang="en" data-theme="cupcake">
+  <head>
+    <BaseHead title={title} description={description} />
+    <script>
+      // Set theme before page loads to prevent flash
+      (function () {
+        const savedTheme = localStorage.getItem("theme") || "cupcake";
+        document.documentElement.setAttribute("data-theme", savedTheme);
+      })();
+    </script>
+  </head>
 
-	<body>
-		<Header />
-		<main>
-			<article>
-				<div class="hero-image">
-					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
-				</div>
-				<div class="prose">
-					<div class="title">
-						<div class="date">
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
-						</div>
-						<h1>{title}</h1>
-						<hr />
-					</div>
-					<slot />
-				</div>
-			</article>
-		</main>
-		<Footer />
-	</body>
+  <body class="min-h-screen flex flex-col bg-base-100">
+    <Header />
+    <main class="flex-1 container mx-auto px-4 py-8 max-w-4xl">
+      <article class="card bg-base-100 shadow-xl">
+        {
+          heroImage && (
+            <figure class="px-0">
+              <Image
+                width={1020}
+                height={510}
+                src={heroImage}
+                alt=""
+                class="w-full h-64 md:h-80 object-cover rounded-t-2xl"
+              />
+            </figure>
+          )
+        }
+        <div class="card-body">
+          <div class="mb-6">
+            <div class="flex flex-col gap-2 mb-4">
+              <div class="badge badge-outline">
+                <FormattedDate date={pubDate} />
+              </div>
+              {
+                updatedDate && (
+                  <div class="badge badge-secondary badge-outline">
+                    Last updated on <FormattedDate date={updatedDate} />
+                  </div>
+                )
+              }
+            </div>
+            <h1 class="card-title text-3xl md:text-4xl font-bold mb-4">
+              {title}
+            </h1>
+            <div class="divider"></div>
+          </div>
+          <div class="prose prose-lg max-w-none">
+            <slot />
+          </div>
+        </div>
+      </article>
+    </main>
+    <Footer />
+  </body>
 </html>

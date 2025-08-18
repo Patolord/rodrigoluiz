@@ -1,5 +1,4 @@
 ---
-import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
 import { getRelativeLocaleUrl } from "astro:i18n";
 
@@ -23,131 +22,257 @@ if (currentPath.startsWith("/")) {
 if (!currentPath) {
   currentPath = "";
 }
+
+// Helper function to check if a link is active
+function isActiveLink(href: string): boolean {
+  const currentPathname = Astro.url.pathname;
+  return href === currentPathname;
+}
 ---
 
-<header>
-  <nav>
-    <h2><a href={getRelativeLocaleUrl(currentLocale, "")}>{SITE_TITLE}</a></h2>
-    <div class="internal-links">
-      <HeaderLink href={getRelativeLocaleUrl(currentLocale, "")}
-        >Home</HeaderLink
+<header class="navbar bg-base-100 shadow-lg">
+  <div class="navbar-start">
+    <div class="dropdown lg:hidden">
+      <div tabindex="0" role="button" class="btn btn-ghost">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="m4 6 16 0M4 12l16 0M4 18l7 0"></path>
+        </svg>
+      </div>
+      <ul
+        tabindex="0"
+        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
       >
-      <HeaderLink href={getRelativeLocaleUrl(currentLocale, "blog")}
-        >Blog</HeaderLink
-      >
-      <HeaderLink href={getRelativeLocaleUrl(currentLocale, "about")}
-        >About</HeaderLink
-      >
-    </div>
-    <div class="locale-switcher">
-      {
-        availableLocales.map((locale) => (
+        <li>
           <a
-            href={getRelativeLocaleUrl(locale, currentPath)}
-            class={`locale-link ${currentLocale === locale ? "active" : ""}`}
-            title={locale === "pt-br" ? "Português (Brasil)" : "English"}
+            href={getRelativeLocaleUrl(currentLocale, "")}
+            class:list={[
+              "btn btn-ghost",
+              {
+                "btn-active": isActiveLink(
+                  getRelativeLocaleUrl(currentLocale, "")
+                ),
+              },
+            ]}
           >
-            <img
-              src={locale === "pt-br" ? "/br.svg" : "/us.svg"}
-              alt={locale === "pt-br" ? "Português (Brasil)" : "English"}
-              width="32"
-              height="32"
-            />
+            Home
           </a>
-        ))
-      }
+        </li>
+        <li>
+          <a
+            href={getRelativeLocaleUrl(currentLocale, "blog")}
+            class:list={[
+              "btn btn-ghost",
+              {
+                "btn-active": isActiveLink(
+                  getRelativeLocaleUrl(currentLocale, "blog")
+                ),
+              },
+            ]}
+          >
+            Blog
+          </a>
+        </li>
+        <li>
+          <a
+            href={getRelativeLocaleUrl(currentLocale, "about")}
+            class:list={[
+              "btn btn-ghost",
+              {
+                "btn-active": isActiveLink(
+                  getRelativeLocaleUrl(currentLocale, "about")
+                ),
+              },
+            ]}
+          >
+            About
+          </a>
+        </li>
+      </ul>
     </div>
-    <div class="social-links">
-      <a href="https://github.com/patolord" target="_blank">
+    <a
+      class="btn btn-ghost text-xl font-bold"
+      href={getRelativeLocaleUrl(currentLocale, "")}
+    >
+      {SITE_TITLE}
+    </a>
+  </div>
+
+  <div class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1 gap-4">
+      <li>
+        <a
+          href={getRelativeLocaleUrl(currentLocale, "")}
+          class:list={[
+            "btn btn-ghost",
+            {
+              "btn-active": isActiveLink(
+                getRelativeLocaleUrl(currentLocale, "")
+              ),
+            },
+          ]}
+        >
+          Home
+        </a>
+      </li>
+      <li>
+        <a
+          href={getRelativeLocaleUrl(currentLocale, "blog")}
+          class:list={[
+            "btn btn-ghost",
+            {
+              "btn-active": isActiveLink(
+                getRelativeLocaleUrl(currentLocale, "blog")
+              ),
+            },
+          ]}
+        >
+          Blog
+        </a>
+      </li>
+      <li>
+        <a
+          href={getRelativeLocaleUrl(currentLocale, "about")}
+          class:list={[
+            "btn btn-ghost",
+            {
+              "btn-active": isActiveLink(
+                getRelativeLocaleUrl(currentLocale, "about")
+              ),
+            },
+          ]}
+        >
+          About
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="navbar-end">
+    <div class="flex items-center gap-2">
+      <!-- GitHub Link -->
+      <a
+        href="https://github.com/patolord"
+        target="_blank"
+        class="btn btn-ghost btn-circle"
+      >
         <span class="sr-only">Go to Patolord's GitHub repo</span>
-        <svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
+        <svg viewBox="0 0 16 16" aria-hidden="true" class="h-6 w-6 fill-current"
           ><path
-            fill="currentColor"
             d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
           ></path></svg
         >
       </a>
+
+      <!-- Language Switcher -->
+      <div class="dropdown dropdown-end">
+        <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+          <img
+            src={currentLocale === "pt-br" ? "/br.svg" : "/us.svg"}
+            alt={currentLocale === "pt-br" ? "Português (Brasil)" : "English"}
+            class="h-6 w-6 rounded"
+          />
+        </div>
+        <ul
+          tabindex="0"
+          class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow"
+        >
+          {
+            availableLocales.map((locale) => (
+              <li>
+                <a
+                  href={getRelativeLocaleUrl(locale, currentPath)}
+                  class={`flex items-center gap-2 ${currentLocale === locale ? "active" : ""}`}
+                  title={locale === "pt-br" ? "Português (Brasil)" : "English"}
+                >
+                  <img
+                    src={locale === "pt-br" ? "/br.svg" : "/us.svg"}
+                    alt={locale === "pt-br" ? "Português (Brasil)" : "English"}
+                    class="h-4 w-4"
+                  />
+                  {locale === "pt-br" ? "Português (Brasil)" : "English"}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <!-- Theme Switcher -->
+      <label
+        class="swap swap-rotate btn btn-ghost btn-circle"
+        id="theme-switcher"
+      >
+        <input type="checkbox" class="theme-controller" id="theme-toggle" />
+
+        <!-- sun icon (cupcake theme) -->
+        <svg
+          class="swap-off h-6 w-6 fill-current"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"
+          >
+          </path>
+        </svg>
+
+        <!-- moon icon (dark theme) -->
+        <svg
+          class="swap-on h-6 w-6 fill-current"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"
+          >
+          </path>
+        </svg>
+      </label>
     </div>
-  </nav>
+  </div>
 </header>
-<style>
-  header {
-    margin: 0;
-    padding: 0 1em;
-    background: white;
-    box-shadow: 0 2px 8px rgba(var(--black), 5%);
-  }
-  h2 {
-    margin: 0;
-    font-size: 1em;
-  }
 
-  h2 a,
-  h2 a.active {
-    text-decoration: none;
-  }
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  nav a {
-    padding: 1em 0.5em;
-    color: var(--black);
-    border-bottom: 4px solid transparent;
-    text-decoration: none;
-  }
-  nav a.active {
-    text-decoration: none;
-    border-bottom-color: var(--accent);
-  }
-  .locale-switcher {
-    display: flex;
-    gap: 0.5em;
-    align-items: center;
-    justify-content: center;
-  }
+<script>
+  // Theme switcher functionality
+  function initThemeSwitcher() {
+    const themeToggle = document.getElementById(
+      "theme-toggle"
+    ) as HTMLInputElement;
+    const html = document.documentElement;
 
-  .locale-link {
-    padding: 0.5em 0.5em !important;
-    font-size: 0.9em;
-    font-weight: 600;
-    border-radius: 4px;
-    background: transparent;
+    // Check for saved theme preference or default to 'cupcake'
+    const savedTheme = localStorage.getItem("theme") || "cupcake";
 
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+    // Apply the saved theme
+    html.setAttribute("data-theme", savedTheme);
 
-  .locale-link {
-    border-bottom: none !important;
-  }
+    // Set checkbox state based on current theme
+    if (themeToggle) {
+      themeToggle.checked = savedTheme === "dark";
 
-  .locale-link img {
-    filter: grayscale(100%);
-    transition: filter 0.2s ease;
-  }
-
-  .locale-link.active img {
-    filter: grayscale(0%);
-  }
-
-  .social-links,
-  .social-links a {
-    display: flex;
-  }
-  @media (max-width: 720px) {
-    .social-links {
-      display: none;
-    }
-    .locale-switcher {
-      gap: 0.25em;
-    }
-    .locale-link {
-      padding: 0.4em 0.6em !important;
-      font-size: 0.8em;
+      // Add event listener for theme toggle
+      themeToggle.addEventListener("change", function () {
+        const newTheme = this.checked ? "dark" : "cupcake";
+        html.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+      });
     }
   }
-</style>
+
+  // Initialize theme switcher when DOM is loaded
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initThemeSwitcher);
+  } else {
+    initThemeSwitcher();
+  }
+</script>

@@ -1,0 +1,28 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import BaseHead from "../components/BaseHead.astro";
+---
+
+<html lang="en" data-theme="cupcake">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <script>
+      // Set theme before page loads to prevent flash
+      (function () {
+        const savedTheme = localStorage.getItem("theme") || "cupcake";
+        document.documentElement.setAttribute("data-theme", savedTheme);
+      })();
+    </script>
+  </head>
+
+  <body class="min-h-screen flex flex-col bg-base-100">
+    <Header />
+    <main class="flex-1 container mx-auto px-4 py-8 max-w-4xl">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

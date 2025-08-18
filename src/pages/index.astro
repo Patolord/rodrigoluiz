@@ -1,111 +1,137 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import Sidebar from "../components/Sidebar.astro";
-
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Home Page";
 ---
 
-<!doctype html>
-<html lang="pt-br">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <Header />
-    <main>
-      <h1>Oi, eu sou o Rodrigo 👋</h1>
-      <p>
-        Este é meu espaço pessoal na web — onde compartilho um pouco do que
-        faço, estudo e crio.
+<BaseLayout title={pageTitle}>
+  <!-- Simple Header -->
+  <header class="text-center mb-16">
+    <h1 class="text-5xl font-bold mb-4">Rodrigo Luiz</h1>
+    <p class="text-xl text-base-content/80 mb-2">
+      Engenheiro & Desenvolvedor Freelancer
+    </p>
+    <p class="text-lg text-base-content/60">São Paulo, Brasil</p>
+  </header>
+
+  <!-- Main Content -->
+  <div class="prose prose-lg max-w-none space-y-12">
+    <!-- About -->
+    <section>
+      <h2 class="text-3xl font-bold mb-6">O que faço</h2>
+      <p class="text-lg leading-relaxed mb-4">
+        Sou engenheiro mecânico especializado em HVAC e desenvolvedor
+        freelancer. Combino conhecimento técnico de engenharia com
+        desenvolvimento moderno para criar soluções práticas e eficientes.
       </p>
-
-      <h2>Quem sou eu</h2>
-      <p>
-        Sou engenheiro mecânico, e engenheiro de obras HVAC em São Paulo,
-        Brasil. Além da engenharia, atuo também como desenvolvedor freelancer —
-        apaixonado por criar apps com <strong>Next.js</strong>, <strong
-          >Convex</strong
-        >, <strong>React</strong> e <strong>TypeScript</strong>.
+      <p class="text-lg leading-relaxed">
+        Programo desde criança (Flash/ActionScript 3.0 era) e hoje foco em
+        soluções simples que um desenvolvedor solo consegue manter. Sou fã de
+        apps enxutos, anti-ERP, com foco real no usuário.
       </p>
-      <p>
-        Programo desde criança (lá da época do <em>Flash / ActionScript 3.0</em>
-        🎮), e hoje busco sempre soluções simples e bem feitas, que um desenvolvedor
-        solo possa manter. Sou muito fã de apps enxutos, <em>anti-ERP</em>, com
-        foco real no usuário e sem "feature creep".
+    </section>
+
+    <!-- Technologies -->
+    <section>
+      <h2 class="text-3xl font-bold mb-6">Stack principal</h2>
+      <p class="text-lg leading-relaxed mb-4">
+        <strong>Frontend:</strong> React, Next.js, TypeScript, Tailwind CSS<br
+        />
+        <strong>Backend:</strong> ConvexDB para tempo real, APIs REST<br />
+        <strong>Sites:</strong> Astro para performance máxima<br />
+        <strong>Explorando:</strong> Rust, Elixir, TigerBeetle
       </p>
+      <p class="text-base text-base-content/70">
+        Escolho tecnologias pela simplicidade e produtividade, não hype. Cada
+        ferramenta precisa resolver um problema real.
+      </p>
+    </section>
 
-      <h2>O que ando criando</h2>
-      <ul>
-        <li>
-          📦 <strong>Warehouse Watcher</strong> — sistema de controle de estoque
-          para pequenos negócios, anti-ERP e simples de usar.
-        </li>
-        <li>
-          📝 Plataforma de simulados com banco de questões e filtros
-          inteligentes.
-        </li>
-        <li>🎮 Jogo Educativo com quizzes e mapa animado.</li>
-        <li>
-          🏗️ ERP modular para minha empresa de HVAC, com fluxo de propostas,
-          contratos, estoque e financeiro.
-        </li>
-        <li>
-          🌐 Landing pages de alta performance (Next.js + Astro) para clientes e
-          projetos próprios.
-        </li>
-      </ul>
+    <!-- Current Projects -->
+    <section>
+      <h2 class="text-3xl font-bold mb-6">Projetos atuais</h2>
 
-      <h2>Outras coisas que curto</h2>
-      <ul>
-        <li>🎹 Piano clássico — estudo e pratico com frequência.</li>
-        <li>
-          🎾 Tênis — hobby que me ajuda a manter o equilíbrio entre trabalho e
-          vida pessoal.
-        </li>
-        <li>
-          🌍 Viajar — já morei nos EUA e no Brasil, e conheci vários países.
-        </li>
-        <li>
-          📚 Estudo de física, matemática aplicada (curiosidade pessoal e para
-          refrescar conhecimentos de engenharia).
-        </li>
-        <li>
-          🛠️ Brincar com automação, IoT, servidores caseiros e otimização de
-          infraestrutura.
-        </li>
-        <li>🎥 Pensando em criar um canal de YouTube para devs solo.</li>
-      </ul>
+      <div class="mb-8">
+        <h3 class="text-xl font-semibold mb-3">📦 Warehouse Watcher</h3>
+        <p class="text-lg leading-relaxed mb-2">
+          Sistema de controle de estoque para pequenos negócios. Anti-ERP,
+          focado em ser simples de usar sem perder funcionalidade essencial.
+        </p>
+        <p class="text-base text-base-content/70">
+          Stack: Next.js + ConvexDB + TypeScript. Interface limpa, sem
+          complexidade desnecessária.
+        </p>
+      </div>
 
-      <h2>Curiosidades</h2>
-      <p>
-        Já publiquei um artigo científico em um journal — <a
-          href="https://www.sciencedirect.com/science/article/abs/pii/B9780444642417503220"
+      <div class="mb-8">
+        <h3 class="text-xl font-semibold mb-3">📝 Plataforma de Simulados</h3>
+        <p class="text-lg leading-relaxed mb-2">
+          Sistema de questões com filtros inteligentes e relatórios de
+          desempenho. Foco na experiência do usuário e dados úteis.
+        </p>
+      </div>
+
+      <div class="mb-8">
+        <h3 class="text-xl font-semibold mb-3">🎮 Jogo Educativo</h3>
+        <p class="text-lg leading-relaxed mb-2">
+          Quiz interativo com mapa animado. Gamificação simples mas efetiva para
+          engajamento educacional.
+        </p>
+      </div>
+
+      <div class="mb-8">
+        <h3 class="text-xl font-semibold mb-3">🏗️ ERP Modular HVAC</h3>
+        <p class="text-lg leading-relaxed mb-2">
+          Sistema próprio para minha empresa: propostas, contratos, estoque,
+          financeiro. Modular para crescer conforme necessidade.
+        </p>
+      </div>
+
+      <div class="mb-8">
+        <h3 class="text-xl font-semibold mb-3">🌐 Landing Pages</h3>
+        <p class="text-lg leading-relaxed mb-2">
+          Sites de alta performance usando Next.js e Astro para clientes.
+          Otimização para conversão e velocidade.
+        </p>
+      </div>
+    </section>
+
+    <!-- Philosophy -->
+    <section>
+      <h2 class="text-3xl font-bold mb-6">Filosofia de trabalho</h2>
+      <p class="text-lg leading-relaxed mb-4">
+        Acredito em software que resolve problemas reais sem adicionar
+        complexidade. Cada feature precisa justificar sua existência. Prefiro 10
+        funcionalidades bem feitas a 100 mal implementadas.
+      </p>
+      <p class="text-lg leading-relaxed mb-4">
+        Como desenvolvedor solo, priorizo tecnologias que me permitem manter e
+        escalar projetos sozinho. Documentação clara, código simples,
+        arquitetura que não vira pesadelo depois de 6 meses.
+      </p>
+      <p class="text-lg leading-relaxed">
+        Combinando engenharia e desenvolvimento, tenho perspectiva única sobre
+        sistemas: entendo tanto a parte técnica quanto as necessidades reais dos
+        usuários.
+      </p>
+    </section>
+
+    <!-- Contact -->
+    <section>
+      <h2 class="text-3xl font-bold mb-6">Vamos trabalhar juntos?</h2>
+      <p class="text-lg leading-relaxed mb-4">
+        Aberto a projetos que fazem sentido. Gosto de entender o problema real
+        antes de propor soluções. Prefiro parcerias de longo prazo a trabalhos
+        pontuais.
+      </p>
+      <p class="text-lg leading-relaxed">
+        <strong>GitHub:</strong>
+        <a
+          href="https://github.com/patolord"
           target="_blank"
-          rel="noopener noreferrer">veja aqui</a
-        >.
+          class="link link-primary">github.com/patolord</a
+        ><br />
+        <strong>Contato:</strong> Via GitHub ou LinkedIn
       </p>
-      <p>
-        Também sou bem autodidata: estudo linguagens como Elixir e Rust por
-        curiosidade, já mexi com Unity, Three.js, mapas interativos, e exploro
-        novos stacks como TigerBeetle.
-      </p>
-      <p>
-        Sempre estou em busca de maneiras de melhorar a arquitetura dos meus
-        apps, e recentemente tenho trabalhado bastante com <strong
-          >ConvexDB</strong
-        > para simplificar backends em tempo real.
-      </p>
-
-      <h2>Por que este site?</h2>
-      <p>
-        É meu espaço para documentar ideias, compartilhar projetos e talvez
-        inspirar outras pessoas. Se você curte esses assuntos também, me chama!
-        🚀
-      </p>
-    </main>
-    <Sidebar />
-    <Footer />
-  </body>
-</html>
+    </section>
+  </div>
+</BaseLayout>

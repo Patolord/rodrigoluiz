@@ -3,6 +3,7 @@ title: 'Using MDX'
 description: 'Lorem ipsum dolor sit amet'
 pubDate: 'Jun 01 2024'
 heroImage: '../../../assets/blog-placeholder-5.jpg'
+locale: 'en'
 ---
 
 This theme comes with the [@astrojs/mdx](https://docs.astro.build/en/guides/integrations-guide/mdx/) integration installed and configured in your `astro.config.mjs` config file. If you prefer not to use MDX, you can disable support by removing the integration from your config file.
@@ -15,14 +16,29 @@ If you have existing content authored in MDX, this integration will hopefully ma
 
 ## Example
 
-Here is how you import and use a UI component inside of MDX.  
+Here is how you can create and use a UI component inside of MDX.  
 When you open this page in the browser, you should see the clickable button below.
 
-import HeaderLink from '../../../components/HeaderLink.astro';
+export const InteractiveButton = ({children, onClick}) => (
+  <button 
+    onClick={onClick}
+    style={{
+      backgroundColor: '#3b82f6',
+      color: 'white',
+      padding: '0.5rem 1rem',
+      borderRadius: '0.375rem',
+      border: 'none',
+      cursor: 'pointer',
+      fontSize: '1rem'
+    }}
+  >
+    {children}
+  </button>
+);
 
-<HeaderLink href="#" onclick="alert('clicked!')">
+<InteractiveButton onClick={() => alert('clicked!')}>
 	Embedded component in MDX
-</HeaderLink>
+</InteractiveButton>
 
 ## More Links
 
