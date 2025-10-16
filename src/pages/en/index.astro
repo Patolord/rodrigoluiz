@@ -1,135 +1,226 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
-const pageTitle = "Home Page";
+const pageTitle = "Home";
 ---
 
 <BaseLayout title={pageTitle}>
-  <!-- Simple Header -->
-  <header class="text-center mb-16">
-    <h1 class="text-5xl font-bold mb-4">Rodrigo Luiz</h1>
-    <p class="text-xl text-base-content/80 mb-2">
-      Engineer & Freelance Developer
+  <!-- Header -->
+  <header class="text-center mb-16 mt-16">
+    <h1 class="text-4xl font-bold mb-4">
+      Everything is interesting if you look closely.
+    </h1>
+    <p class="text-xl text-base-content/80 mb-2"></p>
+    <p class="text-lg text-base-content/60">
+      Each project is born from this curiosity.
     </p>
-    <p class="text-lg text-base-content/60">São Paulo, Brazil</p>
   </header>
 
-  <!-- Main Content -->
   <div class="prose prose-lg max-w-none space-y-12">
     <!-- About -->
     <section>
-      <h2 class="text-3xl font-bold mb-6">What I do</h2>
-      <p class="text-lg leading-relaxed mb-4">
-        I'm a mechanical engineer specializing in HVAC and a freelance
-        developer. I combine technical engineering knowledge with modern
-        development to create practical and efficient solutions.
-      </p>
+      <h2 class="text-3xl font-bold mb-6">About</h2>
       <p class="text-lg leading-relaxed">
-        I've been programming since childhood (Flash/ActionScript 3.0 era) and
-        today I focus on simple solutions that a solo developer can maintain.
-        I'm a fan of lean apps, anti-ERP, with real focus on users.
+        Work starts with curiosity and the desire to improve what already
+        exists. Technology serves as a tool to test big ideas at real scale.
+        Each project is an experiment with a simple goal: build something that
+        makes sense today and remains relevant tomorrow.
       </p>
     </section>
 
-    <!-- Technologies -->
-    <section>
-      <h2 class="text-3xl font-bold mb-6">Main stack</h2>
-      <p class="text-lg leading-relaxed mb-4">
-        <strong>Frontend:</strong> React, Next.js, TypeScript, Tailwind CSS<br
-        />
-        <strong>Backend:</strong> ConvexDB for real-time, REST APIs<br />
-        <strong>Sites:</strong> Astro for maximum performance<br />
-        <strong>Exploring:</strong> Rust, Elixir, TigerBeetle
-      </p>
+    <!-- Projects -->
+    <section class="space-y-6">
+      <h2 class="text-3xl font-bold">Projects</h2>
       <p class="text-base text-base-content/70">
-        I choose technologies for simplicity and productivity, not hype. Every
-        tool needs to solve a real problem.
+        Areas where I usually work — combining technology, design, and clarity
+        to create solutions that really work.
       </p>
-    </section>
 
-    <!-- Current Projects -->
-    <section>
-      <h2 class="text-3xl font-bold mb-6">Current projects</h2>
+      <div class="grid gap-6 md:grid-cols-2">
+        <!-- Digital Products -->
+        <div
+          class="card bg-base-200 shadow-sm hover:bg-base-300 transition-colors"
+        >
+          <div class="card-body">
+            <h3 class="card-title text-lg">🧭 Digital Products</h3>
+            <p>
+              Creation of complete web products — from concept to launch. Stable
+              applications, easy to use and maintained with a long-term focus.
+            </p>
+          </div>
+        </div>
 
-      <div class="mb-8">
-        <h3 class="text-xl font-semibold mb-3">📦 Warehouse Watcher</h3>
-        <p class="text-lg leading-relaxed mb-2">
-          Inventory control system for small businesses. Anti-ERP, focused on
-          being simple to use without losing essential functionality.
-        </p>
-        <p class="text-base text-base-content/70">
-          Stack: Next.js + ConvexDB + TypeScript. Clean interface, no
-          unnecessary complexity.
-        </p>
-      </div>
+        <!-- Ecosystems and Automation -->
+        <div
+          class="card bg-base-200 shadow-sm hover:bg-base-300 transition-colors"
+        >
+          <div class="card-body">
+            <h3 class="card-title text-lg">🔗 Ecosystems and Automation</h3>
+            <p>
+              Integration between systems, APIs, and internal processes.
+              Reduction of manual tasks and creation of automatic flows that
+              save time and errors.
+            </p>
+          </div>
+        </div>
 
-      <div class="mb-8">
-        <h3 class="text-xl font-semibold mb-3">📝 Quiz Platform</h3>
-        <p class="text-lg leading-relaxed mb-2">
-          Question system with intelligent filters and performance reports.
-          Focus on user experience and useful data.
-        </p>
-      </div>
+        <!-- Brand Experiences -->
+        <div
+          class="card bg-base-200 shadow-sm hover:bg-base-300 transition-colors"
+        >
+          <div class="card-body">
+            <h3 class="card-title text-lg">🌐 Brand Experiences</h3>
+            <p>
+              Development of sites and interfaces that translate brand identity.
+              Focus on clean design, speed, and an engaging experience.
+            </p>
+          </div>
+        </div>
 
-      <div class="mb-8">
-        <h3 class="text-xl font-semibold mb-3">🎮 Educational Game</h3>
-        <p class="text-lg leading-relaxed mb-2">
-          Interactive quiz with animated map. Simple but effective gamification
-          for educational engagement.
-        </p>
-      </div>
+        <!-- Business Solutions -->
+        <div
+          class="card bg-base-200 shadow-sm hover:bg-base-300 transition-colors"
+        >
+          <div class="card-body">
+            <h3 class="card-title text-lg">🏢 Business Solutions</h3>
+            <p>
+              Building custom systems based on the rules and flows of each
+              business. Internal tools that bring visibility and real control
+              over operations.
+            </p>
+          </div>
+        </div>
 
-      <div class="mb-8">
-        <h3 class="text-xl font-semibold mb-3">🏗️ Modular HVAC ERP</h3>
-        <p class="text-lg leading-relaxed mb-2">
-          Custom system for my company: proposals, contracts, inventory,
-          finance. Modular to grow as needed.
-        </p>
-      </div>
-
-      <div class="mb-8">
-        <h3 class="text-xl font-semibold mb-3">🌐 Landing Pages</h3>
-        <p class="text-lg leading-relaxed mb-2">
-          High-performance sites using Next.js and Astro for clients. Optimized
-          for conversion and speed.
-        </p>
+        <!-- Experiments and Prototypes -->
+        <div
+          class="card bg-base-200 shadow-sm hover:bg-base-300 transition-colors md:col-span-2"
+        >
+          <div class="card-body">
+            <h3 class="card-title text-lg">🧪 Experiments and Prototypes</h3>
+            <p>
+              Rapid development of ideas, concepts, and new technologies. Space
+              to test hypotheses and transform curiosity into real learning.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Philosophy -->
-    <section>
-      <h2 class="text-3xl font-bold mb-6">Work philosophy</h2>
-      <p class="text-lg leading-relaxed mb-4">
-        I believe in software that solves real problems without adding
-        complexity. Every feature needs to justify its existence. I prefer 10
-        well-made features over 100 poorly implemented ones.
+    <section class="space-y-6">
+      <h2 class="text-3xl font-bold">Philosophy</h2>
+      <p class="text-lg leading-relaxed text-base-content/80">
+        Here I keep quotes and ideas that reflect principles I believe in.
       </p>
-      <p class="text-lg leading-relaxed mb-4">
-        As a solo developer, I prioritize technologies that allow me to maintain
-        and scale projects alone. Clear documentation, simple code, architecture
-        that doesn't become a nightmare after 6 months.
-      </p>
-      <p class="text-lg leading-relaxed">
-        Combining engineering and development, I have a unique perspective on
-        systems: I understand both the technical side and real user needs.
-      </p>
+
+      <div id="quotes-container" class="space-y-2"></div>
+
+      <div class="text-center mt-4">
+        <button id="shuffle-btn" class="btn btn-primary">
+          🎲 Try your luck
+        </button>
+      </div>
     </section>
+
+    <script>
+      import {
+        QuoteShuffler,
+        renderQuote,
+        type Quote,
+      } from "../../utils/quotes";
+
+      const quotes: Quote[] = [
+        {
+          text: "The tool is not the work.",
+          author: "Marshall McLuhan",
+        },
+        {
+          text: "A problem well stated is a problem half solved.",
+          author: "Charles F. Kettering",
+        },
+        {
+          text: "The first principle is that you must not fool yourself — and you are the easiest person to fool.",
+          author: "Richard Feynman",
+        },
+        {
+          text: "I learned very early the difference between knowing the name of something and knowing something.",
+          author: "Richard Feynman",
+        },
+        {
+          text: "Architecture is the art of organizing thought.",
+          author: "Le Corbusier",
+        },
+        {
+          text: "The purpose of a system is what it does.",
+          author: "Stafford Beer",
+        },
+        {
+          text: "You only live once, but if you do it right, once is enough.",
+          author: "Mae West",
+        },
+        {
+          text: "Be yourself; everyone else is already taken.",
+          author: "Oscar Wilde",
+        },
+        {
+          text: "Live as if you were to die tomorrow. Learn as if you were to live forever.",
+          author: "Mahatma Gandhi",
+        },
+        {
+          text: "If you tell the truth, you don't have to remember anything.",
+          author: "Mark Twain",
+        },
+        {
+          text: "In the middle of difficulty lies opportunity.",
+          author: "Albert Einstein",
+        },
+        {
+          text: "Right is right even if no one is doing it; wrong is wrong even if everyone is doing it.",
+          author: "Saint Augustine",
+        },
+        {
+          text: "It's not what happens to you, but how you react to it that matters.",
+          author: "Epictetus",
+        },
+        {
+          text: "The happiness of your life depends on the quality of your thoughts.",
+          author: "Marcus Aurelius",
+        },
+      ];
+
+      const shuffler = new QuoteShuffler(quotes);
+
+      function displayQuotes() {
+        const container = document.getElementById("quotes-container");
+        if (!container) return;
+
+        const quote = shuffler.getRandomQuote();
+        container.innerHTML = renderQuote(quote);
+      }
+
+      // Display quotes on load
+      displayQuotes();
+
+      // Shuffle button
+      const shuffleBtn = document.getElementById("shuffle-btn");
+      if (shuffleBtn) {
+        shuffleBtn.addEventListener("click", displayQuotes);
+      }
+    </script>
 
     <!-- Contact -->
     <section>
-      <h2 class="text-3xl font-bold mb-6">Let's work together?</h2>
-      <p class="text-lg leading-relaxed mb-4">
-        Open to projects that make sense. I like to understand the real problem
-        before proposing solutions. I prefer long-term partnerships over one-off
-        jobs.
+      <h2 class="text-3xl font-bold mb-6">Contact</h2>
+      <p class="text-lg leading-relaxed">
+        I like projects with purpose and room to think differently.
       </p>
       <p class="text-lg leading-relaxed">
-        <strong>GitHub:</strong>
+        <strong>More:</strong>
         <a
           href="https://github.com/patolord"
           target="_blank"
-          class="link link-primary">github.com/patolord</a
+          class="link link-primary">GitHub</a
         ><br />
-        <strong>Contact:</strong> Via GitHub or LinkedIn
+        <strong>Reach me:</strong> via GitHub or LinkedIn
       </p>
     </section>
   </div>

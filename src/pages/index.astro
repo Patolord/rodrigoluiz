@@ -5,13 +5,13 @@ const pageTitle = "Home";
 
 <BaseLayout title={pageTitle}>
   <!-- Header -->
-  <header class="text-center mb-16">
-    <h1 class="text-4xl font-bold mb-4">Olá.</h1>
-    <p class="text-xl text-base-content/80 mb-2">
-      Eu gosto de resolver problemas com software.
-    </p>
+  <header class="text-center mb-16 mt-16">
+    <h1 class="text-4xl font-bold mb-4">
+      Tudo é interessante se você olhar de perto.
+    </h1>
+    <p class="text-xl text-base-content/80 mb-2"></p>
     <p class="text-lg text-base-content/60">
-      Simples, direto e feito pra durar.
+      Cada projeto nasce dessa curiosidade.
     </p>
   </header>
 
@@ -20,63 +20,91 @@ const pageTitle = "Home";
     <section>
       <h2 class="text-3xl font-bold mb-6">Sobre</h2>
       <p class="text-lg leading-relaxed">
-        Eu trabalho criando soluções que unem engenharia, desenvolvimento e
-        criatividade. Gosto de entender o problema antes de escrever qualquer
-        linha de código — só assim a solução faz sentido.
-      </p>
-    </section>
-
-    <!-- How I work -->
-    <section>
-      <h2 class="text-3xl font-bold mb-6">Como penso</h2>
-      <p class="text-lg leading-relaxed mb-4">
-        Eu não sigo fórmulas prontas. Às vezes é um sistema completo, às vezes
-        uma automação, ou só uma integração bem feita. O formato muda, o
-        princípio é o mesmo: resolver de forma clara e leve.
-      </p>
-      <p class="text-base text-base-content/70">
-        Prefiro soluções originais e enxutas a qualquer empilhamento de
-        ferramentas.
+        O trabalho parte da curiosidade e da vontade de melhorar o que já
+        existe. A tecnologia serve como ferramenta para testar ideias grandes em
+        escala real. Cada projeto é um experimento com um objetivo simples:
+        construir algo que faça sentido hoje e continue relevante amanhã.
       </p>
     </section>
 
     <!-- Projects -->
-    <section>
-      <h2 class="text-3xl font-bold mb-6">Projetos</h2>
+    <section class="space-y-6">
+      <h2 class="text-3xl font-bold">Projetos</h2>
+      <p class="text-base text-base-content/70">
+        Áreas onde costumo trabalhar — unindo tecnologia, design e clareza para
+        criar soluções que realmente funcionam.
+      </p>
 
-      <div class="mb-6">
-        <h3 class="text-xl font-semibold mb-2">
-          📦 Sistema de Estoque Simples
-        </h3>
-        <p class="text-lg">Controle prático e auditável sem cara de ERP.</p>
-      </div>
+      <div class="grid gap-6 md:grid-cols-2">
+        <!-- Produtos Digitais -->
+        <div
+          class="card bg-base-200 shadow-sm hover:bg-base-300 transition-colors"
+        >
+          <div class="card-body">
+            <h3 class="card-title text-lg">🧭 Produtos Digitais</h3>
+            <p>
+              Criação de produtos web completos — do conceito ao lançamento.
+              Aplicações estáveis, fáceis de usar e mantidas com foco em longo
+              prazo.
+            </p>
+          </div>
+        </div>
 
-      <div class="mb-6">
-        <h3 class="text-xl font-semibold mb-2">📝 Plataforma de Simulados</h3>
-        <p class="text-lg">
-          Filtros inteligentes, relatórios úteis e interface leve.
-        </p>
-      </div>
+        <!-- Ecossistemas e Automação -->
+        <div
+          class="card bg-base-200 shadow-sm hover:bg-base-300 transition-colors"
+        >
+          <div class="card-body">
+            <h3 class="card-title text-lg">🔗 Ecossistemas e Automação</h3>
+            <p>
+              Integração entre sistemas, APIs e processos internos. Redução de
+              tarefas manuais e criação de fluxos automáticos que poupam tempo e
+              erros.
+            </p>
+          </div>
+        </div>
 
-      <div class="mb-6">
-        <h3 class="text-xl font-semibold mb-2">🎮 Jogo Educativo</h3>
-        <p class="text-lg">Um experimento em aprendizado e interação visual.</p>
-      </div>
+        <!-- Experiências de Marca -->
+        <div
+          class="card bg-base-200 shadow-sm hover:bg-base-300 transition-colors"
+        >
+          <div class="card-body">
+            <h3 class="card-title text-lg">🌐 Experiências de Marca</h3>
+            <p>
+              Desenvolvimento de sites e interfaces que traduzem a identidade da
+              marca. Foco em design limpo, velocidade e uma experiência
+              envolvente.
+            </p>
+          </div>
+        </div>
 
-      <div class="mb-6">
-        <h3 class="text-xl font-semibold mb-2">🏗️ Sistema Modular</h3>
-        <p class="text-lg">
-          Ferramenta interna que conecta propostas, estoque e financeiro.
-        </p>
-      </div>
+        <!-- Soluções Empresariais -->
+        <div
+          class="card bg-base-200 shadow-sm hover:bg-base-300 transition-colors"
+        >
+          <div class="card-body">
+            <h3 class="card-title text-lg">🏢 Soluções Empresariais</h3>
+            <p>
+              Construção de sistemas sob medida com base nas regras e fluxos de
+              cada negócio. Ferramentas internas que trazem visibilidade e
+              controle real sobre operações.
+            </p>
+          </div>
+        </div>
 
-      <div class="mb-6">
-        <h3 class="text-xl font-semibold mb-2">
-          🌐 Landing Pages e Integrações
-        </h3>
-        <p class="text-lg">
-          Páginas rápidas, personalizadas e conectadas ao negócio.
-        </p>
+        <!-- Experimentos e Protótipos -->
+        <div
+          class="card bg-base-200 shadow-sm hover:bg-base-300 transition-colors md:col-span-2"
+        >
+          <div class="card-body">
+            <h3 class="card-title text-lg">🧪 Experimentos e Protótipos</h3>
+            <p>
+              Desenvolvimento rápido de ideias, conceitos e novas tecnologias.
+              Espaço para testar hipóteses e transformar curiosidade em
+              aprendizado real.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -84,9 +112,7 @@ const pageTitle = "Home";
     <section class="space-y-6">
       <h2 class="text-3xl font-bold">Filosofia</h2>
       <p class="text-lg leading-relaxed text-base-content/80">
-        Aqui guardo citações e ideias que refletem princípios que venho
-        descobrindo ao longo do tempo. Não são regras — são pontos de referência
-        que me ajudam a pensar e construir melhor.
+        Aqui guardo citações e ideias que refletem princípios que acredito.
       </p>
 
       <div id="quotes-container" class="space-y-2"></div>
@@ -99,7 +125,9 @@ const pageTitle = "Home";
     </section>
 
     <script>
-      const quotes = [
+      import { QuoteShuffler, renderQuote, type Quote } from "../utils/quotes";
+
+      const quotes: Quote[] = [
         {
           text: "A ferramenta não é o trabalho.",
           author: "Marshall McLuhan",
@@ -116,7 +144,6 @@ const pageTitle = "Home";
           text: "Eu aprendi desde cedo a diferenca entre saber o nome de algo e saber sobre algo.",
           author: "Richard Feynman",
         },
-
         {
           text: "A arquitetura é a arte de organizar o pensamento.",
           author: "Le Corbusier",
@@ -149,45 +176,24 @@ const pageTitle = "Home";
           text: "O certo continua sendo certo, mesmo que ninguém o faça; o errado continua sendo errado, mesmo que todos o façam.",
           author: "Santo Agostinho",
         },
+        {
+          text: "Não é o que acontece com você, mas como você reage ao que acontece que importa.",
+          author: "Epicteto",
+        },
+        {
+          text: "A felicidade da sua vida depende da qualidade dos seus pensamentos.",
+          author: "Marco Aurélio",
+        },
       ];
 
-      let shownQuotes: Set<string> = new Set();
-
-      function getRandomQuote() {
-        // If there's only one quote, return it
-        if (quotes.length === 1) {
-          return quotes[0];
-        }
-
-        // Get quotes that haven't been shown yet
-        const availableQuotes = quotes.filter((q) => !shownQuotes.has(q.text));
-
-        // If all quotes have been shown, reset the set
-        if (availableQuotes.length === 0) {
-          shownQuotes.clear();
-          return getRandomQuote();
-        }
-
-        // Get a random quote from available quotes
-        const randomIndex = Math.floor(Math.random() * availableQuotes.length);
-        return availableQuotes[randomIndex];
-      }
+      const shuffler = new QuoteShuffler(quotes);
 
       function displayQuotes() {
         const container = document.getElementById("quotes-container");
         if (!container) return;
 
-        const quote = getRandomQuote();
-        shownQuotes.add(quote.text);
-
-        container.innerHTML = `
-          <blockquote class="border-l-2 border-primary pl-3 py-1">
-            <p class="text-lg italic">"${quote.text}"</p>
-            <footer class="text-sm text-base-content/70 mt-0.5">
-              — ${quote.author}
-            </footer>
-          </blockquote>
-        `;
+        const quote = shuffler.getRandomQuote();
+        container.innerHTML = renderQuote(quote);
       }
 
       // Display quotes on load
