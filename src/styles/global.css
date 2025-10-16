@@ -3,6 +3,8 @@
   themes: cupcake --default, dracula --prefersdark;
 }
 
+@custom-variant dark (&:where([data-theme=dracula], [data-theme=dracula] *));
+
 @layer base {
   h1 {
     font-size: var(--text-2xl);

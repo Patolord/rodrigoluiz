@@ -184,7 +184,7 @@ function isActiveLink(href: string): boolean {
         class="swap swap-rotate btn btn-ghost btn-circle"
         id="theme-switcher"
       >
-        <input type="checkbox" class="theme-controller" id="theme-toggle" />
+        <input type="checkbox" id="theme-toggle" />
 
         <!-- sun icon (cupcake theme) -->
         <svg
@@ -198,7 +198,7 @@ function isActiveLink(href: string): boolean {
           </path>
         </svg>
 
-        <!-- moon icon (dark theme) -->
+        <!-- moon icon (dracula theme) -->
         <svg
           class="swap-on h-6 w-6 fill-current"
           xmlns="http://www.w3.org/2000/svg"
@@ -214,77 +214,53 @@ function isActiveLink(href: string): boolean {
   </div>
 </header>
 
+<script is:inline>
+  // Apply saved theme immediately to avoid flash
+  (function () {
+    const savedTheme = localStorage.getItem("theme") || "cupcake";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  })();
+</script>
+
 <script>
-  // Theme switcher functionality
+  // Theme switcher with localStorage persistence
   function initThemeSwitcher() {
     const themeToggle = document.getElementById(
       "theme-toggle"
     ) as HTMLInputElement;
-    const mobileThemeToggle = document.getElementById("mobile-theme-toggle");
-    const mobileThemeIconLight = document.getElementById(
-      "mobile-theme-icon-light"
-    );
-    const mobileThemeIconDark = document.getElementById(
-      "mobile-theme-icon-dark"
-    );
-    const mobileThemeText = document.getElementById("mobile-theme-text");
-    const html = document.documentElement;
 
-    // Check for saved theme preference or default to 'cupcake'
+    if (!themeToggle) {
+      console.error("Theme toggle element not found");
+      return;
+    }
+
+    // Get saved theme or default to 'cupcake'
     const savedTheme = localStorage.getItem("theme") || "cupcake";
 
-    // Apply the saved theme
-    html.setAttribute("data-theme", savedTheme);
+    // Set checkbox state: checked if dracula, unchecked if cupcake
+    themeToggle.checked = savedTheme === "dracula";
 
-    // Function to update mobile theme UI
-    function updateMobileThemeUI(theme: string) {
-      if (mobileThemeIconLight && mobileThemeIconDark && mobileThemeText) {
-        if (theme === "dark") {
-          mobileThemeIconLight.classList.add("hidden");
-          mobileThemeIconDark.classList.remove("hidden");
-          mobileThemeText.textContent = "Modo Claro";
-        } else {
-          mobileThemeIconLight.classList.remove("hidden");
-          mobileThemeIconDark.classList.add("hidden");
-          mobileThemeText.textContent = "Modo Escuro";
-        }
-      }
-    }
+    // Handle toggle change
+    const handleToggle = (e: Event) => {
+      const target = e.target as HTMLInputElement;
+      const newTheme = target.checked ? "dracula" : "cupcake";
 
-    // Set checkbox state based on current theme
-    if (themeToggle) {
-      themeToggle.checked = savedTheme === "dark";
+      // Update data-theme attribute
+      document.documentElement.setAttribute("data-theme", newTheme);
 
-      // Add event listener for desktop theme toggle
-      themeToggle.addEventListener("change", function () {
-        const newTheme = this.checked ? "dark" : "cupcake";
-        html.setAttribute("data-theme", newTheme);
-        localStorage.setItem("theme", newTheme);
-        updateMobileThemeUI(newTheme);
-      });
-    }
+      // Save to localStorage
+      localStorage.setItem("theme", newTheme);
 
-    // Initialize mobile theme UI
-    updateMobileThemeUI(savedTheme);
+      console.log("Theme changed to:", newTheme);
+    };
 
-    // Add event listener for mobile theme toggle
-    if (mobileThemeToggle) {
-      mobileThemeToggle.addEventListener("click", function () {
-        const currentTheme = html.getAttribute("data-theme");
-        const newTheme = currentTheme === "dark" ? "cupcake" : "dark";
-        html.setAttribute("data-theme", newTheme);
-        localStorage.setItem("theme", newTheme);
-        updateMobileThemeUI(newTheme);
+    // Add event listener
+    themeToggle.addEventListener("change", handleToggle);
 
-        // Sync with desktop toggle
-        if (themeToggle) {
-          themeToggle.checked = newTheme === "dark";
-        }
-      });
-    }
+    console.log("Theme switcher initialized with theme:", savedTheme);
   }
 
-  // Initialize theme switcher when DOM is loaded
+  // Initialize when DOM is ready
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", initThemeSwitcher);
   } else {
