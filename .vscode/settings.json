@@ -1,8 +1,10 @@
 {
-    "typescript.tsdk": "node_modules/typescript/lib",
-    "workbench.colorCustomizations": {
-        "activityBar.background": "#301977",
-        "titleBar.activeBackground": "#4323A7",
-        "titleBar.activeForeground": "#FBFAFE"
-    }
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#301977",
+    "titleBar.activeBackground": "#4323A7",
+    "titleBar.activeForeground": "#FBFAFE"
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "astro-build.astro-vscode"
 }

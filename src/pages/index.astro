@@ -1,136 +1,219 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-const pageTitle = "Home Page";
+const pageTitle = "Home";
 ---
 
 <BaseLayout title={pageTitle}>
-  <!-- Simple Header -->
+  <!-- Header -->
   <header class="text-center mb-16">
-    <h1 class="text-5xl font-bold mb-4">Rodrigo Luiz</h1>
+    <h1 class="text-4xl font-bold mb-4">Olá.</h1>
     <p class="text-xl text-base-content/80 mb-2">
-      Engenheiro & Desenvolvedor Freelancer
+      Eu gosto de resolver problemas com software.
     </p>
-    <p class="text-lg text-base-content/60">São Paulo, Brasil</p>
+    <p class="text-lg text-base-content/60">
+      Simples, direto e feito pra durar.
+    </p>
   </header>
 
-  <!-- Main Content -->
   <div class="prose prose-lg max-w-none space-y-12">
     <!-- About -->
     <section>
-      <h2 class="text-3xl font-bold mb-6">O que faço</h2>
-      <p class="text-lg leading-relaxed mb-4">
-        Sou engenheiro mecânico especializado em HVAC e desenvolvedor
-        freelancer. Combino conhecimento técnico de engenharia com
-        desenvolvimento moderno para criar soluções práticas e eficientes.
-      </p>
+      <h2 class="text-3xl font-bold mb-6">Sobre</h2>
       <p class="text-lg leading-relaxed">
-        Programo desde criança (Flash/ActionScript 3.0 era) e hoje foco em
-        soluções simples que um desenvolvedor solo consegue manter. Sou fã de
-        apps enxutos, anti-ERP, com foco real no usuário.
+        Eu trabalho criando soluções que unem engenharia, desenvolvimento e
+        criatividade. Gosto de entender o problema antes de escrever qualquer
+        linha de código — só assim a solução faz sentido.
       </p>
     </section>
 
-    <!-- Technologies -->
+    <!-- How I work -->
     <section>
-      <h2 class="text-3xl font-bold mb-6">Stack principal</h2>
+      <h2 class="text-3xl font-bold mb-6">Como penso</h2>
       <p class="text-lg leading-relaxed mb-4">
-        <strong>Frontend:</strong> React, Next.js, TypeScript, Tailwind CSS<br
-        />
-        <strong>Backend:</strong> ConvexDB para tempo real, APIs REST<br />
-        <strong>Sites:</strong> Astro para performance máxima<br />
-        <strong>Explorando:</strong> Rust, Elixir, TigerBeetle
+        Eu não sigo fórmulas prontas. Às vezes é um sistema completo, às vezes
+        uma automação, ou só uma integração bem feita. O formato muda, o
+        princípio é o mesmo: resolver de forma clara e leve.
       </p>
       <p class="text-base text-base-content/70">
-        Escolho tecnologias pela simplicidade e produtividade, não hype. Cada
-        ferramenta precisa resolver um problema real.
+        Prefiro soluções originais e enxutas a qualquer empilhamento de
+        ferramentas.
       </p>
     </section>
 
-    <!-- Current Projects -->
+    <!-- Projects -->
     <section>
-      <h2 class="text-3xl font-bold mb-6">Projetos atuais</h2>
+      <h2 class="text-3xl font-bold mb-6">Projetos</h2>
 
-      <div class="mb-8">
-        <h3 class="text-xl font-semibold mb-3">📦 Warehouse Watcher</h3>
-        <p class="text-lg leading-relaxed mb-2">
-          Sistema de controle de estoque para pequenos negócios. Anti-ERP,
-          focado em ser simples de usar sem perder funcionalidade essencial.
-        </p>
-        <p class="text-base text-base-content/70">
-          Stack: Next.js + ConvexDB + TypeScript. Interface limpa, sem
-          complexidade desnecessária.
+      <div class="mb-6">
+        <h3 class="text-xl font-semibold mb-2">
+          📦 Sistema de Estoque Simples
+        </h3>
+        <p class="text-lg">Controle prático e auditável sem cara de ERP.</p>
+      </div>
+
+      <div class="mb-6">
+        <h3 class="text-xl font-semibold mb-2">📝 Plataforma de Simulados</h3>
+        <p class="text-lg">
+          Filtros inteligentes, relatórios úteis e interface leve.
         </p>
       </div>
 
-      <div class="mb-8">
-        <h3 class="text-xl font-semibold mb-3">📝 Plataforma de Simulados</h3>
-        <p class="text-lg leading-relaxed mb-2">
-          Sistema de questões com filtros inteligentes e relatórios de
-          desempenho. Foco na experiência do usuário e dados úteis.
+      <div class="mb-6">
+        <h3 class="text-xl font-semibold mb-2">🎮 Jogo Educativo</h3>
+        <p class="text-lg">Um experimento em aprendizado e interação visual.</p>
+      </div>
+
+      <div class="mb-6">
+        <h3 class="text-xl font-semibold mb-2">🏗️ Sistema Modular</h3>
+        <p class="text-lg">
+          Ferramenta interna que conecta propostas, estoque e financeiro.
         </p>
       </div>
 
-      <div class="mb-8">
-        <h3 class="text-xl font-semibold mb-3">🎮 Jogo Educativo</h3>
-        <p class="text-lg leading-relaxed mb-2">
-          Quiz interativo com mapa animado. Gamificação simples mas efetiva para
-          engajamento educacional.
-        </p>
-      </div>
-
-      <div class="mb-8">
-        <h3 class="text-xl font-semibold mb-3">🏗️ ERP Modular HVAC</h3>
-        <p class="text-lg leading-relaxed mb-2">
-          Sistema próprio para minha empresa: propostas, contratos, estoque,
-          financeiro. Modular para crescer conforme necessidade.
-        </p>
-      </div>
-
-      <div class="mb-8">
-        <h3 class="text-xl font-semibold mb-3">🌐 Landing Pages</h3>
-        <p class="text-lg leading-relaxed mb-2">
-          Sites de alta performance usando Next.js e Astro para clientes.
-          Otimização para conversão e velocidade.
+      <div class="mb-6">
+        <h3 class="text-xl font-semibold mb-2">
+          🌐 Landing Pages e Integrações
+        </h3>
+        <p class="text-lg">
+          Páginas rápidas, personalizadas e conectadas ao negócio.
         </p>
       </div>
     </section>
 
     <!-- Philosophy -->
-    <section>
-      <h2 class="text-3xl font-bold mb-6">Filosofia de trabalho</h2>
-      <p class="text-lg leading-relaxed mb-4">
-        Acredito em software que resolve problemas reais sem adicionar
-        complexidade. Cada feature precisa justificar sua existência. Prefiro 10
-        funcionalidades bem feitas a 100 mal implementadas.
+    <section class="space-y-6">
+      <h2 class="text-3xl font-bold">Filosofia</h2>
+      <p class="text-lg leading-relaxed text-base-content/80">
+        Aqui guardo citações e ideias que refletem princípios que venho
+        descobrindo ao longo do tempo. Não são regras — são pontos de referência
+        que me ajudam a pensar e construir melhor.
       </p>
-      <p class="text-lg leading-relaxed mb-4">
-        Como desenvolvedor solo, priorizo tecnologias que me permitem manter e
-        escalar projetos sozinho. Documentação clara, código simples,
-        arquitetura que não vira pesadelo depois de 6 meses.
-      </p>
-      <p class="text-lg leading-relaxed">
-        Combinando engenharia e desenvolvimento, tenho perspectiva única sobre
-        sistemas: entendo tanto a parte técnica quanto as necessidades reais dos
-        usuários.
-      </p>
+
+      <div id="quotes-container" class="space-y-2"></div>
+
+      <div class="text-center mt-4">
+        <button id="shuffle-btn" class="btn btn-primary">
+          🎲 Tente a sorte
+        </button>
+      </div>
     </section>
+
+    <script>
+      const quotes = [
+        {
+          text: "A ferramenta não é o trabalho.",
+          author: "Marshall McLuhan",
+        },
+        {
+          text: "Um problema bem definido é um problema meio resolvido.",
+          author: "Charles F. Kettering",
+        },
+        {
+          text: "O primeiro princípio é que você não deve enganar a si mesmo — e você é a pessoa mais fácil de enganar.",
+          author: "Richard Feynman",
+        },
+        {
+          text: "Eu aprendi desde cedo a diferenca entre saber o nome de algo e saber sobre algo.",
+          author: "Richard Feynman",
+        },
+
+        {
+          text: "A arquitetura é a arte de organizar o pensamento.",
+          author: "Le Corbusier",
+        },
+        {
+          text: "O propósito de um sistema é o que ele faz.",
+          author: "Stafford Beer",
+        },
+        {
+          text: "Você só vive uma vez, mas se fizer isso direito, uma vez é o bastante.",
+          author: "Mae West",
+        },
+        {
+          text: "Seja você mesmo; todos os outros já existem.",
+          author: "Oscar Wilde",
+        },
+        {
+          text: "Viva como se fosse morrer amanhã. Aprenda como se fosse viver para sempre.",
+          author: "Mahatma Gandhi",
+        },
+        {
+          text: "Se você diz a verdade, não precisa se lembrar de nada.",
+          author: "Mark Twain",
+        },
+        {
+          text: "No meio da dificuldade encontra-se a oportunidade.",
+          author: "Albert Einstein",
+        },
+        {
+          text: "O certo continua sendo certo, mesmo que ninguém o faça; o errado continua sendo errado, mesmo que todos o façam.",
+          author: "Santo Agostinho",
+        },
+      ];
+
+      let shownQuotes: Set<string> = new Set();
+
+      function getRandomQuote() {
+        // If there's only one quote, return it
+        if (quotes.length === 1) {
+          return quotes[0];
+        }
+
+        // Get quotes that haven't been shown yet
+        const availableQuotes = quotes.filter((q) => !shownQuotes.has(q.text));
+
+        // If all quotes have been shown, reset the set
+        if (availableQuotes.length === 0) {
+          shownQuotes.clear();
+          return getRandomQuote();
+        }
+
+        // Get a random quote from available quotes
+        const randomIndex = Math.floor(Math.random() * availableQuotes.length);
+        return availableQuotes[randomIndex];
+      }
+
+      function displayQuotes() {
+        const container = document.getElementById("quotes-container");
+        if (!container) return;
+
+        const quote = getRandomQuote();
+        shownQuotes.add(quote.text);
+
+        container.innerHTML = `
+          <blockquote class="border-l-2 border-primary pl-3 py-1">
+            <p class="text-lg italic">"${quote.text}"</p>
+            <footer class="text-sm text-base-content/70 mt-0.5">
+              — ${quote.author}
+            </footer>
+          </blockquote>
+        `;
+      }
+
+      // Display quotes on load
+      displayQuotes();
+
+      // Shuffle button
+      const shuffleBtn = document.getElementById("shuffle-btn");
+      if (shuffleBtn) {
+        shuffleBtn.addEventListener("click", displayQuotes);
+      }
+    </script>
 
     <!-- Contact -->
     <section>
-      <h2 class="text-3xl font-bold mb-6">Vamos trabalhar juntos?</h2>
-      <p class="text-lg leading-relaxed mb-4">
-        Aberto a projetos que fazem sentido. Gosto de entender o problema real
-        antes de propor soluções. Prefiro parcerias de longo prazo a trabalhos
-        pontuais.
+      <h2 class="text-3xl font-bold mb-6">Contato</h2>
+      <p class="text-lg leading-relaxed">
+        Gosto de projetos com propósito e espaço pra pensar diferente.
       </p>
       <p class="text-lg leading-relaxed">
-        <strong>GitHub:</strong>
+        <strong>Mais:</strong>
         <a
           href="https://github.com/patolord"
           target="_blank"
-          class="link link-primary">github.com/patolord</a
+          class="link link-primary">GitHub</a
         ><br />
-        <strong>Contato:</strong> Via GitHub ou LinkedIn
+        <strong>Fale comigo:</strong> via GitHub ou LinkedIn
       </p>
     </section>
   </div>

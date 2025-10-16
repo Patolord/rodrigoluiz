@@ -82,21 +82,6 @@ function isActiveLink(href: string): boolean {
             Blog
           </a>
         </li>
-        <li>
-          <a
-            href={getRelativeLocaleUrl(currentLocale, "about")}
-            class:list={[
-              "btn btn-ghost",
-              {
-                "btn-active": isActiveLink(
-                  getRelativeLocaleUrl(currentLocale, "about")
-                ),
-              },
-            ]}
-          >
-            About
-          </a>
-        </li>
       </ul>
     </div>
     <a
@@ -137,21 +122,6 @@ function isActiveLink(href: string): boolean {
           ]}
         >
           Blog
-        </a>
-      </li>
-      <li>
-        <a
-          href={getRelativeLocaleUrl(currentLocale, "about")}
-          class:list={[
-            "btn btn-ghost",
-            {
-              "btn-active": isActiveLink(
-                getRelativeLocaleUrl(currentLocale, "about")
-              ),
-            },
-          ]}
-        >
-          About
         </a>
       </li>
     </ul>
