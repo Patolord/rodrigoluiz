@@ -1,5 +1,5 @@
 ---
-import { SITE_TITLE } from "../consts";
+import { SITE_TITLE, SITE_TITLE_SHORT, SITE_TITLE_INITIALS } from "../consts";
 import { getRelativeLocaleUrl } from "astro:i18n";
 
 const currentLocale = Astro.currentLocale || "pt-br";
@@ -33,7 +33,7 @@ function isActiveLink(href: string): boolean {
 <header class="navbar bg-base-100 shadow-lg">
   <div class="navbar-start">
     <div class="dropdown lg:hidden">
-      <div tabindex="0" role="button" class="btn btn-ghost">
+      <button tabindex="0" role="button" class="btn" aria-label="Toggle menu">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-5 w-5"
@@ -47,7 +47,7 @@ function isActiveLink(href: string): boolean {
             stroke-width="2"
             d="m4 6 16 0M4 12l16 0M4 18l7 0"></path>
         </svg>
-      </div>
+      </button>
       <ul
         tabindex="0"
         class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
@@ -88,12 +88,14 @@ function isActiveLink(href: string): boolean {
       class="btn btn-ghost text-xl font-bold"
       href={getRelativeLocaleUrl(currentLocale, "")}
     >
-      {SITE_TITLE}
+      <span class="hidden md:inline">{SITE_TITLE}</span>
+      <span class="hidden sm:inline md:hidden">{SITE_TITLE_SHORT}</span>
+      <span class="inline sm:hidden">{SITE_TITLE_INITIALS}</span>
     </a>
   </div>
 
   <div class="navbar-center hidden lg:flex">
-    <ul class="menu menu-horizontal px-1 gap-4">
+    <nav class="menu menu-horizontal px-1 gap-4">
       <li>
         <a
           href={getRelativeLocaleUrl(currentLocale, "")}
@@ -124,7 +126,7 @@ function isActiveLink(href: string): boolean {
           Blog
         </a>
       </li>
-    </ul>
+    </nav>
   </div>
 
   <div class="navbar-end">
@@ -218,6 +220,14 @@ function isActiveLink(href: string): boolean {
     const themeToggle = document.getElementById(
       "theme-toggle"
     ) as HTMLInputElement;
+    const mobileThemeToggle = document.getElementById("mobile-theme-toggle");
+    const mobileThemeIconLight = document.getElementById(
+      "mobile-theme-icon-light"
+    );
+    const mobileThemeIconDark = document.getElementById(
+      "mobile-theme-icon-dark"
+    );
+    const mobileThemeText = document.getElementById("mobile-theme-text");
     const html = document.documentElement;
 
     // Check for saved theme preference or default to 'cupcake'
@@ -226,15 +236,50 @@ function isActiveLink(href: string): boolean {
     // Apply the saved theme
     html.setAttribute("data-theme", savedTheme);
 
+    // Function to update mobile theme UI
+    function updateMobileThemeUI(theme: string) {
+      if (mobileThemeIconLight && mobileThemeIconDark && mobileThemeText) {
+        if (theme === "dark") {
+          mobileThemeIconLight.classList.add("hidden");
+          mobileThemeIconDark.classList.remove("hidden");
+          mobileThemeText.textContent = "Modo Claro";
+        } else {
+          mobileThemeIconLight.classList.remove("hidden");
+          mobileThemeIconDark.classList.add("hidden");
+          mobileThemeText.textContent = "Modo Escuro";
+        }
+      }
+    }
+
     // Set checkbox state based on current theme
     if (themeToggle) {
       themeToggle.checked = savedTheme === "dark";
 
-      // Add event listener for theme toggle
+      // Add event listener for desktop theme toggle
       themeToggle.addEventListener("change", function () {
         const newTheme = this.checked ? "dark" : "cupcake";
         html.setAttribute("data-theme", newTheme);
         localStorage.setItem("theme", newTheme);
+        updateMobileThemeUI(newTheme);
+      });
+    }
+
+    // Initialize mobile theme UI
+    updateMobileThemeUI(savedTheme);
+
+    // Add event listener for mobile theme toggle
+    if (mobileThemeToggle) {
+      mobileThemeToggle.addEventListener("click", function () {
+        const currentTheme = html.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "cupcake" : "dark";
+        html.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+        updateMobileThemeUI(newTheme);
+
+        // Sync with desktop toggle
+        if (themeToggle) {
+          themeToggle.checked = newTheme === "dark";
+        }
       });
     }
   }
