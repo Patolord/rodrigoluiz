@@ -241,6 +241,25 @@ const pageTitle = "Home";
           <strong>Reach me:</strong> via GitHub or LinkedIn
         </p>
       </section>
+
+      <!-- Comments -->
+      <section>
+        <h2 class="text-3xl font-bold mb-6">Comments</h2>
+        <div class="giscus"></div>
+      </section>
+
+      <script>
+        import {
+          initGiscus,
+          setupGiscusThemeObserver,
+        } from "../../utils/giscus";
+
+        // Initialize Giscus on page load
+        initGiscus();
+
+        // Setup theme change observer
+        setupGiscusThemeObserver();
+      </script>
     </div>
     <!-- End of blur wrapper -->
   </div>
