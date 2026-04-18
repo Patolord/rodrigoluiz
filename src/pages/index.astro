@@ -6,7 +6,7 @@ const pageTitle = "Home";
 <BaseLayout title={pageTitle}>
   <!-- Title - stays clear, no blur -->
   <h1
-    class="text-5xl md:text-6xl font-normal italic mb-4 text-center mt-16 select-none tracking-tight leading-tight"
+    class="text-5xl font-normal italic mb-4 text-center mt-16 select-none tracking-tight leading-tight"
   >
     Tudo é interessante se você olhar de perto.
   </h1>
@@ -16,12 +16,7 @@ const pageTitle = "Home";
     class="motion-safe:animate-[unblurContent_3s_ease-out_forwards]"
     style="filter: blur(8px);"
   >
-    <!-- Subtitle -->
-    <p class="text-lg text-base-content/60 text-center mb-16">
-      Cada projeto nasce dessa curiosidade.
-    </p>
-
-    <div class="prose prose-lg max-w-none space-y-12">
+    <div class="prose prose-lg max-w-none space-y-12 mt-16">
       <!-- About -->
       <section>
         <h2 class="text-3xl font-bold mb-6">Sobre</h2>
@@ -35,11 +30,10 @@ const pageTitle = "Home";
 
           <div class="flex-1">
             <p class="text-lg leading-relaxed text-center sm:text-left">
-              O trabalho parte da curiosidade e da vontade de melhorar o que já
-              existe. A tecnologia serve como ferramenta para testar ideias
-              grandes em escala real. Cada projeto é um experimento com um
-              objetivo simples: construir algo que faça sentido hoje e continue
-              relevante amanhã.
+              Quase tudo que importa se decide nos detalhes. Uma palavra
+              escolhida com cuidado, uma pausa antes de responder, um gesto
+              pensado. Em cada coisa a que se dedica atenção, cria-se uma
+              profundidade que antes não existia.
             </p>
           </div>
         </div>
@@ -49,7 +43,7 @@ const pageTitle = "Home";
       <section class="space-y-6">
         <h2 class="text-3xl font-bold">Projetos</h2>
         <p class="text-base text-base-content/70">
-          Áreas onde costumo trabalhar — unindo tecnologia, design e clareza
+          Áreas onde costumo trabalhar, unindo tecnologia, design e clareza
           para criar soluções que realmente funcionam.
         </p>
 
@@ -61,7 +55,7 @@ const pageTitle = "Home";
             <div class="card-body">
               <h3 class="card-title text-lg">🧭 Produtos Digitais</h3>
               <p>
-                Criação de produtos web completos — do conceito ao lançamento.
+                Criação de produtos web completos, do conceito ao lançamento.
                 Aplicações estáveis, fáceis de usar e mantidas com foco em longo
                 prazo.
               </p>
@@ -159,7 +153,7 @@ const pageTitle = "Home";
             author: "Charles F. Kettering",
           },
           {
-            text: "O primeiro princípio é que você não deve enganar a si mesmo — e você é a pessoa mais fácil de enganar.",
+            text: "O primeiro princípio é que você não deve enganar a si mesmo, e você é a pessoa mais fácil de enganar.",
             author: "Richard Feynman",
           },
           {
@@ -206,6 +200,10 @@ const pageTitle = "Home";
             text: "A felicidade da sua vida depende da qualidade dos seus pensamentos.",
             author: "Marco Aurélio",
           },
+          {
+            text: "Simplicidade é subtrair o óbvio e adicionar o significativo.",
+            author: "John Maeda",
+          },
         ];
 
         const shuffler = new QuoteShuffler(quotes);
@@ -231,9 +229,6 @@ const pageTitle = "Home";
       <!-- Contact -->
       <section>
         <h2 class="text-3xl font-bold mb-6">Contato</h2>
-        <p class="text-lg leading-relaxed">
-          Gosto de projetos com propósito e espaço pra pensar diferente.
-        </p>
         <p class="text-lg leading-relaxed">
           <strong>Mais:</strong>
           <a
